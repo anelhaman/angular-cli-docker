@@ -1,0 +1,35 @@
+#!/bin/bash -xe
+
+docker_build(){
+  docker build -t node .
+}
+
+docker_run(){
+  docker run -d --rm --name node -v $(pwd):/usr/src/node -p 3000:3000 -p 4200:4200 node
+}
+
+docker_stop(){
+  docker stop node
+}
+docker_list(){
+  docker container ls -a
+}
+
+case "$1" in
+  build)
+    docker_build
+    ;;
+  stop)
+    docker_stop
+    ;;
+  ps)
+    docker_list
+    ;;
+  run)
+    docker_run
+    ;;
+
+  *)
+    echo "bad input"
+    exit 1;
+esac
