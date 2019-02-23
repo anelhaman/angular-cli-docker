@@ -14,6 +14,9 @@ docker_stop(){
 docker_list(){
   docker container ls -a
 }
+docker_exec(){
+  docker exec -it node /bin/bash
+}
 
 case "$1" in
   build)
@@ -26,6 +29,9 @@ case "$1" in
     docker_list
     ;;
   run)
+    docker_run
+    ;;
+  exec)
     docker_run
     ;;
 
