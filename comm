@@ -37,5 +37,10 @@ case "$1" in
 
   *)
     echo "bad input"
+    echo "comm build"
+    echo "comm run"
+    echo "comm stop"
+    echo "comm ps"
+    echo "comm exec"
     exit 1;
 esac
