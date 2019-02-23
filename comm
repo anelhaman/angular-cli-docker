@@ -32,7 +32,7 @@ case "$1" in
     docker_run
     ;;
   exec)
-    docker_run
+    docker_exec
     ;;
 
   *)
